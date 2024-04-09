@@ -1,4 +1,30 @@
 {
   "type": "PTE",
-  "templateUrl": "https://github.com/microsoft/AL-Go-PTE@main"
+  "templateUrl": "https://github.com/microsoft/AL-Go-PTE@main",
+  "environments": [
+    "QA",
+    "TEST",
+    "PROD"
+  ],
+  "deployToPROD": {
+    "EnvironmentType": "SaaS",
+    "EnvironmentName": "Production",
+    "Branches": [
+      "main"
+    ],
+    "SyncMode": "Add",
+    "ContinuousDeployment": "false"
+  },
+  "DeployToTEST": {
+    "EnvironmentType": "SaaS",
+    "EnvironmentName": "Sandbox",
+    "Branches": [
+      "TESTING"
+    ],
+    "ContinuousDeployment": "true"
+  },
+  "CICDPushBranches": [
+    "TESTING",
+    "main"
+  ]
 }
